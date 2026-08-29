@@ -1,52 +1,69 @@
-# 🚀 PowerTrack Projects
+# Address Book
 
-Welcome to the PowerTrack Projects Repository.
+A simple C-based address book application for managing contacts. The program supports creating, searching, editing, deleting, listing, and marking favorite contacts. Contact data is persisted in `contacts.txt`, so information is preserved between program runs.
 
-## Purpose
-This repository is used for:
-- Project Submissions
-- Project Reviews
-- Feedback and Suggestions
-- Progress Tracking
+## Features
 
-## Submission Guidelines
-1. Create a folder with your name.
-2. Upload all source files.
-3. Include project documentation.
-4. Follow the prescribed folder structure.
+- Add new contacts with name, phone number, email, and favorite status
+- Search contacts by name, phone number, or email
+- Edit existing contact details
+- Delete contacts
+- List all saved contacts in a formatted table
+- View favorite contacts and categorize them as Friend, Family, or Others
+- Automatic data persistence in `contacts.txt`
+- Input validation for names, phone numbers, and emails
 
-## Feedback
-All feedback and review comments will be provided through GitHub.
+## Project Structure
 
-## Repository Maintainer
-Saravanan S
+- `main.c` - main application loop and menu handler
+- `contact.c` - contact management functions (create, edit, list, search, delete)
+- `functions.c` - input validation, search utilities, and helper functions
+- `file.c` - file save/load implementation
+- `contact.h` - address book and contact structure definitions
+- `file.h` - file operation declarations
+- `functions.h` - helper function declarations
+- `colors.h` - terminal color macros for styled output
+- `contacts.txt` - saved contact data file
 
+## Build Instructions
 
-<h1 align="center">Hi 👋, I'm Saravanan</h1>
+Compile the project using a C compiler such as `gcc`.
 
-<p align="center">
-Embedded Systems | Linux | PIC | Arduino | STM32 | CAN Protocol
-</p>
+```bash
+gcc main.c contact.c functions.c file.c -o addressbook
+```
 
-<p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=00C853&center=true&vCenter=true&width=600&lines=Assistant+Manager;Microcontroller+Enthusiast;PowerTrack+Mentor">
-</p>
+## Run Instructions
 
+Execute the compiled program from the command line:
 
-## Skills
+```bash
+./addressbook
+```
 
-![C](https://img.shields.io/badge/C-Language-blue)
-![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange)
-![STM32](https://img.shields.io/badge/STM32-Microcontroller-green)
-![PIC](https://img.shields.io/badge/PIC18F4580-Embedded-red)
-![PIC](https://img.shields.io/badge/Arduino-Embedded-red)
-![CAN](https://img.shields.io/badge/CAN-Protocol-yellow)
-![Git](https://img.shields.io/badge/Git-VersionControl-black)
+On Windows with MinGW or a similar toolchain, use:
 
-## GitHub Stats
+```bash
+addressbook.exe
+```
 
-![Saravanan's GitHub stats](https://github-readme-stats.vercel.app/api?username=saravanan-s95&show_icons=true&theme=tokyonight)
+## Usage
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=saravanan-s95&theme=tokyonight)
+The program displays a menu with options to:
 
-![](https://komarev.com/ghpvc/?username=saravanan-s95&color=blue)
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Favorite contacts
+7. Save and Exit
+
+Choose the desired option by entering its number and follow the prompts.
+
+## Notes
+
+- The address book supports up to 100 contacts.
+- Phone numbers must be 10 digits and start with a digit between 6 and 9.
+- Emails must be lowercase and end with `.com`.
+- The project is designed for console usage with text-based interaction.
